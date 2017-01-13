@@ -21,8 +21,9 @@
 
   <div class="container">
     <div class="alert alert-info" ng-if="narrowItDown.showError">Nothing found</div>
-    <div class="loader"></div>
-    <found-items items="narrowItDown.foundItems" on-remove="narrowItDown.removeItem(index)"></found-items>
+    <found-items items="narrowItDown.foundItems" on-remove="narrowItDown.removeItem(index)">
+      <div class="loader"></div>
+    </found-items>
   </div>
 
 </body>
