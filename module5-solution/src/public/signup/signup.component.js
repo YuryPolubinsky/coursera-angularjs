@@ -15,6 +15,8 @@ function SignUpController(MenuService, CacheService) {
   signUp.submit = function () {
     MenuService.getMenuItem(signUp.user.menunumber).then(function (response) {
       if(response.error) {
+        CacheService.deleteUserInfo();
+        
         signUp.isInfoSaved = false;
         signUp.isInvalidMenuItem = true;
       }

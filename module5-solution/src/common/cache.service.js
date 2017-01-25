@@ -8,12 +8,18 @@ angular.module('common')
 function CacheService() {
   var service = this;
 
+  service.savedUserInfo = null;
+
   service.saveUserInfo = function (userInfo) {
     service.savedUserInfo = userInfo;
   }
 
   service.getUserInfo = function () {
     return service.savedUserInfo ? service.savedUserInfo : null;
+  }
+
+  service.deleteUserInfo = function () {
+    service.savedUserInfo = null;
   }
 }
 
