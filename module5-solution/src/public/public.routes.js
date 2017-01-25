@@ -7,8 +7,12 @@ angular.module('public')
 /**
  * Configures the routes and views
  */
-routeConfig.$inject = ['$stateProvider'];
-function routeConfig ($stateProvider) {
+routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+function routeConfig ($stateProvider, $urlRouterProvider) {
+
+  // Redirect to home page if no other URL matches
+  $urlRouterProvider.otherwise('/');
+
   // Routes
   $stateProvider
     .state('public', {
